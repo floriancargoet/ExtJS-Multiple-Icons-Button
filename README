@@ -1,2 +1,11 @@
 This ExtJS extension is a button which has several icons instead of only one.
-You can use this for a toggle button with an icon for each state or for a cycle button with an icon for each sub-item.
+You can use this for a toggle button with an icon for each state or for a cycle button with an icon for each sub-item or any button that may need several icons.
+
+See my website (in french) for more information : http://fcargoet.evolix.net/webdev/extjs/extjs-multiple-icons-button/
+See a demo : http://fcargoet.evolix.net/demos/extjs/extjs-multiple-icons-button/
+
+Licenses :
+- Ext.ux.MultipleIconsButton extension is under GPLv3
+- Images are under CC-By-3.0
+    - they come from the Silk Icons pack by Mark James
+    - you can download the pack at http://www.famfamfam.com/lab/icons/silk/

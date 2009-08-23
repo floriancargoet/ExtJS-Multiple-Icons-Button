@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Load Button Example</title>
+
+    <!-- ExtJS CSS -->
+    <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.0.0/resources/css/ext-all.css"/>
+   
+    <!-- Multiple Icons Button CSS -->
+    <style type="text/css">
+		/* TODO */
+    </style>
+
+    <!-- ExtJS lib -->
+    <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.0.0/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.0.0/ext-all.js"></script>
+
+    <script type="text/javascript" src="Ext.ux.MultipleIconsButton.js"></script>
+    <script type="text/javascript">
+    Ext.BLANK_IMAGE_URL = 'http://extjs.cachefly.net/ext-3.0.0/resources/images/default/s.gif';
+    Ext.onReady(function(){
+        
+        var win = new Ext.Window({
+            title : 'Load Button test',
+            width : 400,
+            height: 300,
+            tbar:[
+                {
+                    xtype:'mibutton',
+                    icons : ['img/disconnect.png','img/connect.png'],
+                    text : 'Connect',
+                    enableToggle:true,
+                    toggleHandler : function(btn,state){
+                    	if(state){
+                    		btn.setText('Disconnect');
+                    	}
+                    	else{
+                    		btn.setText('Connect');
+                    	}
+                	}
+                },{
+                
+                    xtype:'mibutton',
+                    icons : ['img/tag_blue.png','img/tag_red.png','img/tag_green.png','img/tag_yellow.png'],
+                    text : 'blue tag',
+                    handler : function(){
+                    	var color = this.icon.replace(/(\.png)|(img\/tag_)/g,'');
+                    	this.setText(color+' tag');
+                	}
+                }
+            ],
+            layout:'fit',
+            items:{
+            	border:false,
+            	html : '<ul>'+
+            	'<li>The "Connect/Disconnect" has two states :'+
+            		'<ol>'+
+            			'<li>Disconnected (unplugged icon).</li>'+
+            			'<li>Connected (plugged icon).</li>'+
+            		'</ol>'+
+            	'</li>'+
+            	'<li>The "Four icons button" cycles through its four icons.</li>'+
+            '</ul>',
+            
+        		preventBodyReset:true
+            }
+                    
+        });
+        win.show();
+
+    });
+    </script>
+</head>
+<body>
+</body>
+</html>
